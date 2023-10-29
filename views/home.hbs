@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+    <style>
+.user-name-display
+{
+    color: white;
+    text-decoration: none;
+}
+.user-botton
+{
+    background-color: blue;
+    float: right;
+    margin-right: 10px;
+    margin-top: 4px;
+    width:70px;
+    height:34px;
+    border: 0px;
+}
+#button-signin-home
+{
+   
+    background-color: red;
+    float:right;
+    margin-top: 4px;
+    width:70px;
+    height:34px;
+   
+}
+.user-name-display
+{
+    color:white;
+}
+.home-button
+{
+    width:70px;
+    height:34px;
+    border: 0px;
+    margin-top: 4px;
+    background-color:green;
+    float:left;
+}
+    </style>
+</head>
+<body>
+    
+
+    <nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-start">
+    <a href="/signout" style="color: black;"><button id="button-signin-home" class="btn btn-outline-success me-2"
+        type="button"> SignOut</button></a>
+    {{!-- <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button> --}}
+    <button class="user-botton"><a class="user-name-display" href="#">
+        
+        {{uName}}
+        
+        </a></button>
+    <button class="home-button"><a class="user-name-display" href="#">Home</a></button>
+  </form>
+</nav>
+{{!-- <h1 style="text-align: center;"> I am {{uName}}</h1> --}}
+<br>
+<h1 style="text-align: center;"> Welcome to my Page</h1>
+
+<div class="container">
+  <div class="row">
+    {{#each phone}}
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="{{this.img}}" class="card-img-top" alt="..." style="height: 300px;">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.details}}</p>
+          <a href="#" class="btn btn-primary">About phone</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<script>
+  if(window.history && window.history.pushState){
+    window.history.pushState(null,null,'/')
+  }
+  
+
+    </script>
+
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</script>
+</body>
+</html>
